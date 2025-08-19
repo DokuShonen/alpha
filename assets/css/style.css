@@ -1,0 +1,429 @@
+/* ==========================================================================
+   Futuristic & Professional Redesign by Gemini
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/*   0. CSS Variables (Theme Configuration)
+/* -------------------------------------------------------------------------- */
+
+:root {
+    --color-background: #0D1117; /* GitHub Dark Background */
+    --color-surface: #161B22;    /* GitHub Dark Surface */
+    --color-primary: #58A6FF;    /* GitHub Dark Blue */
+    --color-primary-glow: rgba(88, 166, 255, 0.5);
+    --color-text-primary: #C9D1D9; /* GitHub Dark Text */
+    --color-text-secondary: #8B949E;
+    --color-border: #30363D;
+    --color-success: #3FB950;
+    --color-danger: #F85149;
+
+    --font-family-headings: 'Orbitron', sans-serif;
+    --font-family-body: 'Montserrat', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* -------------------------------------------------------------------------- */
+/*   1. Global Styles & Resets
+/* -------------------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-body);
+    line-height: 1.6;
+    text-align: center;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: #84c0ff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-headings);
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px var(--color-primary-glow);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* -------------------------------------------------------------------------- */
+/*   2. Header & Navigation
+/* -------------------------------------------------------------------------- */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--color-primary);
+    color: var(--color-background);
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: 1.5rem;
+}
+
+.dropdown-menu {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.dropdown-menu ul li a {
+    font-family: var(--font-family-headings);
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transition-speed) ease;
+}
+
+.dropdown-menu ul li a:hover {
+    border-bottom-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* -------------------------------------------------------------------------- */
+/*   3. Forms & Tables
+/* -------------------------------------------------------------------------- */
+
+form {
+    background: var(--color-surface);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    color: var(--color-text-primary);
+    font-family: var(--font-family-body);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary-glow);
+}
+
+button, .btn {
+    background: var(--color-primary);
+    color: var(--color-background);
+    font-family: var(--font-family-headings);
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--color-primary-glow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-surface);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+th {
+    background: var(--color-background);
+    font-family: var(--font-family-headings);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #222831;
+}
+
+#montant-total {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* -------------------------------------------------------------------------- */
+/*   4. Page Specific Styles
+/* -------------------------------------------------------------------------- */
+
+/* --- Index Page --- */
+.presentation {
+    padding: 2rem;
+    background: var(--color-surface);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.image-bubbles {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.bubble {
+    background: var(--color-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    width: 250px;
+    text-align: center;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.bubble:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.bubble img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+/* --- Blog/Service Page --- */
+.corps, #services {
+    padding: 2rem;
+    background: var(--color-surface);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+#services .row {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#services .col-md-4 {
+    flex: 1;
+    min-width: 280px;
+    background: var(--color-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+/* --- Contact Page --- */
+.contact-section, .contact-response {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--color-surface);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.contact-response a {
+    margin-top: 1rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*   5. Footer
+/* -------------------------------------------------------------------------- */
+
+.footer {
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    padding: 3rem 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.footer-logo, .footer-links, .footer-social, .footer-contact {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer h3 {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.footer ul {
+    list-style: none;
+    text-align: left;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer a {
+    color: var(--color-text-secondary);
+}
+
+.footer a:hover {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* -------------------------------------------------------------------------- */
+/*   6. Responsive Design
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        background: var(--color-surface);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+        transform: translateX(100%);
+        transition: transform var(--transition-speed) ease-in-out;
+        z-index: 1000;
+    }
+
+    .dropdown-menu.show {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .dropdown-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .dropdown-menu ul li {
+        width: 100%;
+        border-bottom: 1px solid var(--color-border);
+        padding: 1rem 0;
+    }
+    
+    .dropdown-menu ul li:last-child {
+        border-bottom: none;
+    }
+}
