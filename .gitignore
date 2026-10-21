@@ -1,0 +1,14 @@
+# Configuration locale
+config/db.local.php
+
+# Journaux et donnees locales
+var/
+*.log
+
+# Archives inutile
+src/lib/*.zip
+public/assets/images/*.zip
+
+# Systeme
+.DS_Store
+Thumbs.db

@@ -1,0 +1,30 @@
+# ALPHA - configuration Apache du dossier public/.
+#
+# Ce fichier doit se trouver dans la racine du site (public/). Il est lu par
+# Apache a chaque requete. Enregistrez-le sans BOM.
+#
+# Les en-tetes de securite ne sont pas emis ici : ils le sont par
+# l'application, pour ne dependre d'aucune directive propre a un hebergeur.
+
+# Toute URL qui ne correspond pas a un fichier existant est servie par la
+# page 404 de l'application, qui renvoie elle-meme le code 404. Le chemin
+# est relatif au dossier courant : la page reste trouvee que le site soit a
+# la racine d'un domaine ou dans un sous-dossier.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ 404.php [L]
+</IfModule>
+
+# --- Directives optionnelles ---------------------------------------------
+# Decommentez-les uniquement si votre serveur les accepte : une directive
+# refusee provoque une erreur 500 sur l'ensemble du site.
+
+# Pas d'index de repertoire (categorie Indexes)
+# Options -Indexes
+
+# Interdire le service direct de certains fichiers (categorie Limit)
+# <FilesMatch "\.(sql|log|md|json|lock|ini|bak)$">
+#     Require all denied
+# </FilesMatch>

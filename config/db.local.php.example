@@ -1,0 +1,15 @@
+<?php
+/**
+ * Modele de configuration de la base de donnees.
+ *
+ * Copiez ce fichier vers config/db.local.php et renseignez vos identifiants.
+ * Le fichier local n'est pas versionne.
+ */
+return [
+    'host' => 'localhost',
+    'port' => 3306,
+    'socket' => '',
+    'user' => 'root',
+    'pass' => '',
+    'name' => 'projet',
+];
