@@ -4,9 +4,7 @@ Laboratoire d'etudiants applique a l'intelligence artificielle et aux objets
 connectes. Le site presente les travaux de l'equipe, recense les services
 proposes et tient le budget des depenses du projet.
 
-Le projet est hebergeable sur un mutualise PHP (Alwaysdata, OVH, o2switch) :
-le dossier `public/` est la racine web et le reste du projet reste hors
-racine. La procedure de mise en ligne decrite plus bas s'applique telle quelle.
+Une instance est en ligne sur <https://alphaxi.alwaysdata.net/>.
 
 ## Fonctionnalites
 
